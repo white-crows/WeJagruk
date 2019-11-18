@@ -45,7 +45,26 @@ async function getIssues() {
 }
 
 //contributor add-----------------------------------------------
-function performContribute(d) {}
+async function performContribute(id) {
+  try {
+    const res = await axios.post(
+      "http://localhost:3000/api/issue/contributor",
+      {
+        email: localStorage.getItem("user"),
+        issueId: id
+      }
+    );
+    if (res.data === "successful") {
+      alert("successfully added as a contributor");
+    } else if (res.data === "already-contributed") {
+      alert("you have already signed up for contribution");
+    } else {
+      alert(res);
+    }
+  } catch (err) {
+    alert(err);
+  }
+}
 // axios
 //   .get("http://localhost:3000/api/issue/get")
 

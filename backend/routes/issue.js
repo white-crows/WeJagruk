@@ -85,4 +85,25 @@ router.get("/get", async (req, res) => {
     .exec();
   res.json(ret).status(200);
 });
+
+// add contributor --------------
+router.post("/contributor", async (req, res) => {
+  const issue = await issueModel.findOne({ _id: req.body.issueId });
+
+  if (issue !== "") {
+    // if (issue.contributor.find(req.body.email) !== "") {
+    //   return res.send("already-contributed");
+    // }
+
+    const ret = await issueModel.update(
+      { _id: req.body.issueId },
+      { $push: { contribtor: req.body.email } }
+    );
+    console.log(ret);
+    console.log(issue.contributor);
+    return res.send("successful");
+  } else {
+    res.send("Issue no more exists");
+  }
+});
 module.exports = router;
