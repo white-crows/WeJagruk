@@ -1,0 +1,40 @@
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-brand {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 25px;
+}
+.navbar {
+  background-image: linear-gradient(to right, #ff416c, #f16c4b);
+  padding: 0 !important;
+}
+
+.navbar li {
+  padding: 0 10px;
+}
+
+.dropdown-item {
+  background-image: linear-gradient(to right, #ff416c, #f16c4b);
+  padding: 0 !important;
+}
+.navbar li a {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.fa-bars {
+  color: black;
+  font-size: 30px !important;
+}
+.navbar-toggler {
+  outline: none !important;
+}
+
+.container {
+  margin-top: 80px;
+}

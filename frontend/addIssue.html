@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="addIssue.css" />
+
+    <title>Add Concern</title>
+  </head>
+  <body>
+    <section id="nav-bar">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">WeJagruk</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="feed.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Profile
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">view profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Log-out</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link "
+                href="#team"
+                tabindex="-1"
+                aria-disabled="true"
+                >Your Concerns</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+
+    <!-- form-------------- -->
+    <div class="container">
+      <form
+        action="http://localhost:3000/api/issue/post"
+        method="POST"
+        id="issueForm"
+        enctype="multipart/form-data"
+      >
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="issueTitle">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              name="issueTitle"
+              id="issueTitle"
+              placeholder="issue title"
+            />
+          </div>
+          <div class="form-group col-md-12">
+            <label for="issueDescription">Description</label>
+            <textarea
+              type="text"
+              class="form-control"
+              name="issueDescription"
+              id="issueDescription"
+              placeholder="issue description"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="issueAddress">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            name="issueAddress"
+            id="issueAddress"
+            placeholder="1234 Main St"
+          />
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="issueCity">City</label>
+            <input
+              type="text"
+              class="form-control"
+              name="issueCity"
+              id="issueCity"
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="issueState">State</label>
+            <select name="issueState" id="issueState" class="form-control">
+              <option selected>Choose...</option>
+              <option>Rajasthan</option>
+              <option>Assam</option>
+              <option>Maharastra</option>
+              <option>Gujrat</option>
+              <option>Sikkim</option>
+              <option>TamilNadu</option>
+              <option>Delhi</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="issueZip">Zip code</label>
+            <input
+              type="text"
+              class="form-control"
+              name="issueZip"
+              id="issueZip"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="issueImage">Image ralated to issue</label>
+          <input
+            type="file"
+            class="form-control-file"
+            name="issueImage"
+            id="issueImage"
+          />
+        </div>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <script src="addIssue.js"></script>
+  </body>
+</html>
