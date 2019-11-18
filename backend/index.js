@@ -1,8 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const ejs = require("ejs");
-const path = require("path");
+
 const parser = require("body-parser");
 //access control allow origin
 app.use("*", function(req, res, next) {
@@ -11,7 +10,7 @@ app.use("*", function(req, res, next) {
   res.set("Access-Control-Allow-Methods", "*");
   next();
 });
-app.set("view engine", "ejs");
+// app.set("view engine", "ejs");
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 //env file reading using dotenv
