@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const morgan = require("morgan");
 
 const parser = require("body-parser");
 //access control allow origin
@@ -11,6 +12,7 @@ app.use("*", function(req, res, next) {
   next();
 });
 // app.set("view engine", "ejs");
+app.use(morgan("dev"));
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 //env file reading using dotenv
