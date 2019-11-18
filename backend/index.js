@@ -12,6 +12,7 @@ app.use("*", function(req, res, next) {
 });
 app.use(morgan("dev"));
 // app.set("view engine", "ejs");
+app.use(morgan("dev"));
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 //env file reading using dotenv
