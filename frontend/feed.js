@@ -19,6 +19,32 @@ async function getIssues() {
     let issueAddress = res.data[i].address;
     const issueImageUrl = res.data[i].image;
     let issueCity = res.data[i].city;
+    let issueEmail = res.data[i].email;
+
+    if (localStorage.getItem("user") === issueEmail) {
+      let issueContibutor = res.data[i].contibutor;
+      document.getElementById("addPeronalCard").innerHTML += `
+      <br>
+      <center>
+      <div class="card" style="width:100%;box-shadow: 0.2em .2em .2em #888888;">
+      
+      <div class="big_red">
+      <h5 class="card-title">${issueTitle}</h5>
+        <img class="card-img-top" src="../backend/uploads/${issueImageUrl}" alt="Card image cap">
+
+      </div>
+      <br>
+
+        <div class="card-body">
+        <span> <button class="btn btn-primary" onclick="performContribute('${issueId}')" >Contribute</button> </span>
+          <p class="card-text" ><b>Description</b>: ${issueDesc}</p>
+          <p class="card-text" ><b>Contributors</b>: ${issueContibutor}</p>
+          <span><b>Address</b>: ${issueAddress} , ${issueCity}</span>
+        </div>
+      </div>
+      </center>
+      `;
+    }
 
     document.getElementById("addCard").innerHTML += `
 
