@@ -7,7 +7,7 @@ async function getIssues() {
   for (let i = 0; i < res.data.length; i++) {
     console.log(res.data[i]);
     c.push(0);
-    let issueTitle = res.data[i]._id;
+    let issueTitle = res.data[i].title;
     let issueDesc = res.data[i].description;
     let issueAddress = res.data[i].address;
     const issueImageUrl = res.data[i].image;
@@ -25,22 +25,11 @@ async function getIssues() {
 
             </div>
             <br>
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-lg-4">
-                <button class="btn btn-light" onclick="updateVote(${i},'${issueTitle}')">🔥<span id="v${i}">${issueCity}</span></button>
-                </div>
-                <div class=" col-lg-7">
-                <button class="btn btn-primary" onclick="openChat('${issueTitle}')" >contribute</button>
-                </div>
-            </div>
-            </div>
 
               <div class="card-body">
-                <p class="card-text" >${issueDesc}</p>
-              </div>
-              <div class="card-body">
-                <span><b>Address</b>: ${issueAddress}</span>
+              <span> </span> <span> <button class="btn btn-primary">contribute</button> </span>
+                <p class="card-text" ><b>Description</b>: ${issueDesc}</p>
+                <span><b>Address</b>: ${issueAddress} , ${issueCity}</span>
               </div>
             </div>
             </center>
