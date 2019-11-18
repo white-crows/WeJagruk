@@ -47,32 +47,24 @@
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Profile
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">view profile</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Log-out</a>
-              </div>
-            </li>
+
             <li class="nav-item">
               <a
                 class="nav-link "
-                href="#team"
+                href="personalFeed.html"
                 tabindex="-1"
                 aria-disabled="true"
                 >Your Concerns</a
               >
+            </li>
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-light"
+                onclick="performLogOut()"
+              >
+                Log-out
+              </button>
             </li>
           </ul>
         </div>
@@ -186,5 +178,6 @@
         .setAttribute("value", localStorage.getItem("user"));
     </script>
     <script src="addIssue.js"></script>
+    <script src="validate.js"></script>
   </body>
 </html>

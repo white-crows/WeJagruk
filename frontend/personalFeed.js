@@ -22,76 +22,54 @@ async function getIssues() {
     let issueCity = res.data[i].city;
     let issueEmail = res.data[i].email;
 
-    document.getElementById("addCard").innerHTML += `
+    if (localStorage.getItem("user") === issueEmail) {
+      let issueContributor = res.data[i].contributor;
+      console.log(issueContributor);
+      document.getElementById("addPersonalCard").innerHTML += `
+      <br>
+      <center>
+      <div class="card" style="width:100%;box-shadow: 0.2em .2em .2em #888888;">
 
-            <br>
-            <center>
-            <div class="card" style="width:100%;box-shadow: 0.2em .2em .2em #888888;">
-            
-            <div class="big_red">
-            <h5 class="card-title">${issueTitle}</h5>
-              <img class="card-img-top" src="../backend/uploads/${issueImageUrl}" alt="Card image cap">
+      <div class="big_red">
+      <h5 class="card-title">${issueTitle}</h5>
+        <img class="card-img-top" src="../backend/uploads/${issueImageUrl}" alt="Card image cap">
 
-            </div>
-            <br>
+      </div>
+      <br>
 
-              <div class="card-body">
-              <span> <button class="btn btn-primary" onclick="performContribute('${issueId}')" >Contribute</button> </span>
-                <p class="card-text" ><b>Description</b>: ${issueDesc}</p>
-                <span><b>Address</b>: ${issueAddress} , ${issueCity}</span>
-              </div>
-            </div>
-            </center>
-            `;
-
-    // if (localStorage.getItem("user") === issueEmail) {
-    //   let issueContibutor = res.data[i].contibutor;
-    //   document.getElementById("addPersonalCard").innerHTML += `
-    //   <br>
-    //   <center>
-    //   <div class="card" style="width:100%;box-shadow: 0.2em .2em .2em #888888;">
-
-    //   <div class="big_red">
-    //   <h5 class="card-title">${issueTitle}</h5>
-    //     <img class="card-img-top" src="../backend/uploads/${issueImageUrl}" alt="Card image cap">
-
-    //   </div>
-    //   <br>
-
-    //     <div class="card-body">
-    //     <span> <button class="btn btn-primary" onclick="performContribute('${issueId}')" >Contribute</button> </span>
-    //       <p class="card-text" ><b>Description</b>: ${issueDesc}</p>
-    //       <p class="card-text" ><b>Contributors</b>: ${issueContibutor}</p>
-    //       <span><b>Address</b>: ${issueAddress} , ${issueCity}</span>
-    //     </div>
-    //   </div>
-    //   </center>
-    //   `;
-    // }
+        <div class="card-body">
+          <p class="card-text" ><b>Description</b>: ${issueDesc}</p>
+          <p class="card-text" ><b>Contributors</b>: ${issueContributor}</p>
+          <span><b>Address</b>: ${issueAddress} , ${issueCity}</span>
+        </div>
+      </div>
+      </center>
+      `;
+    }
   }
 }
 
 //contributor add-----------------------------------------------
-async function performContribute(id) {
-  try {
-    const res = await axios.post(
-      "http://localhost:3000/api/issue/contributor",
-      {
-        email: localStorage.getItem("user"),
-        issueId: id
-      }
-    );
-    if (res.data === "successful") {
-      alert("successfully added as a contributor");
-    } else if (res.data === "already-contributed") {
-      alert("you have already signed up for contribution");
-    } else {
-      alert(res);
-    }
-  } catch (err) {
-    alert(err);
-  }
-}
+// async function performContribute(id) {
+//   try {
+//     const res = await axios.post(
+//       "http://localhost:3000/api/issue/contributor",
+//       {
+//         email: localStorage.getItem("user"),
+//         issueId: id
+//       }
+//     );
+//     if (res.data === "successful") {
+//       alert("successfully added as a contributor");
+//     } else if (res.data === "already-contributed") {
+//       alert("you have already signed up for contribution");
+//     } else {
+//       alert(res);
+//     }
+//   } catch (err) {
+//     alert(err);
+//   }
+// }
 
 // axios
 //   .get("http://localhost:3000/api/issue/get")
