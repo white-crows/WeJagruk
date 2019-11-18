@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const ejs = require("ejs");
 const path = require("path");
 const issueModel = require("../model/Issue");
 
@@ -66,7 +65,6 @@ router.post("/post", async (req, res) => {
       });
       try {
         const ret = newIssue.save();
-        res.redirect("http://127.0.0.1:5500/frontend/feed.html");
         console.log("issue reported successfully");
       } catch (err) {
         console.log(err);
