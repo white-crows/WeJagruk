@@ -91,15 +91,15 @@ router.post("/contributor", async (req, res) => {
   const issue = await issueModel.findOne({ _id: req.body.issueId });
 
   if (issue !== "") {
-    // if (issue.contributor.find(req.body.email) !== "") {
-    //   return res.send("already-contributed");
-    // }
+    const n = issue.contributor.length;
+    for (i = 0; i < n; i++) {
+      if (issue.contributor[i] === req.body.email) {
+        return res.send("already-contributed");
+      }
+    }
+    issue.contributor.push(req.body.email);
+    issue.save();
 
-    const ret = await issueModel.update(
-      { _id: req.body.issueId },
-      { $push: { contribtor: req.body.email } }
-    );
-    console.log(ret);
     console.log(issue.contributor);
     return res.send("successful");
   } else {

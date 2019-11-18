@@ -42,7 +42,9 @@ const issueSchema = new mongoose.Schema({
   image: {
     type: String
   },
-  contributor: []
+  contributor: {
+    type: Array
+  }
 });
 
 module.exports = mongoose.model("Issue", issueSchema);
