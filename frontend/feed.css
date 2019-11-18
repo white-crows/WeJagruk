@@ -1,0 +1,62 @@
+#nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-brand {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 25px;
+}
+.navbar {
+  background-image: linear-gradient(to right, #ff416c, #f16c4b);
+  padding: 0 !important;
+}
+
+.navbar li {
+  padding: 0 10px;
+}
+
+.dropdown-item {
+  background-image: linear-gradient(to right, #ff416c, #f16c4b);
+  padding: 0 !important;
+}
+.navbar li a {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.fa-bars {
+  color: black;
+  font-size: 30px !important;
+}
+.navbar-toggler {
+  outline: none !important;
+}
+
+/* ---------------------------section concerns----------------------------- */
+/* concern from heading */
+.row {
+  width: inherit;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.concernFormHeading {
+  margin: 100px 0px 25px 0px;
+}
+.row h4 {
+  margin-top: 50px;
+}
+#collapseExample {
+  margin-top: 20px;
+}
+
+/* card img */
+
+.card-img-top {
+  padding: 20px;
+}
+.card-title {
+  margin-top: 10px;
+}
