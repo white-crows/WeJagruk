@@ -39,17 +39,18 @@
 /* concern from heading */
 .row {
   width: inherit;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 .concernFormHeading {
   margin: 100px 0px 25px 0px;
 }
 .row h4 {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 #collapseExample {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* card img */
@@ -59,4 +60,7 @@
 }
 .card-title {
   margin-top: 10px;
+}
+.card-text {
+  margin: 5px;
 }
