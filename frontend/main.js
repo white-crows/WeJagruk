@@ -28,6 +28,7 @@ async function performSignUpRequest(e) {
       email: email,
       password: password
     });
+    console.log(res);
   } catch (err) {
     console.log(err);
   }
