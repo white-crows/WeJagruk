@@ -60,11 +60,13 @@ router.post("/post", async (req, res) => {
         city: req.body.issueCity,
         state: req.body.issueState,
         zip: req.body.issueZip,
-        image: req.file.filename
+        image: req.file.filename,
+        email: req.body.issueEmail,
+        contributor: []
       });
       try {
         const ret = newIssue.save();
-        res.redirect("http://127.0.0.1:5500/Animations/feed.html");
+        res.redirect("http://127.0.0.1:5500/frontend/feed.html");
         console.log("issue reported successfully");
       } catch (err) {
         console.log(err);

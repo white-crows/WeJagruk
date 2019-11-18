@@ -58,6 +58,7 @@ async function performLogInRequest(e) {
     //if login request approved, homepage loading-------------------
     if (ret.data.message === "logged-in") {
       localStorage.setItem("token", ret.data.authtoken);
+      localStorage.setItem("user", email);
       window.location.href = "feed.html";
     } else {
       alert(ret.data.message);

@@ -7,6 +7,9 @@ const issueSchema = new mongoose.Schema({
     min: 3,
     max: 100
   },
+  email: {
+    type: String
+  },
   description: {
     type: String,
     required: true,
@@ -38,7 +41,8 @@ const issueSchema = new mongoose.Schema({
   },
   image: {
     type: String
-  }
+  },
+  contributor: []
 });
 
 module.exports = mongoose.model("Issue", issueSchema);

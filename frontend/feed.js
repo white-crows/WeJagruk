@@ -13,6 +13,7 @@ async function getIssues() {
   for (let i = 0; i < res.data.length; i++) {
     console.log(res.data[i]);
     c.push(0);
+    let issueId = res.data[i]._id;
     let issueTitle = res.data[i].title;
     let issueDesc = res.data[i].description;
     let issueAddress = res.data[i].address;
@@ -33,7 +34,7 @@ async function getIssues() {
             <br>
 
               <div class="card-body">
-              <span> </span> <span> <button class="btn btn-primary">contribute</button> </span>
+              <span> <button class="btn btn-primary" onclick="performContribute('${issueId}')" >Contribute</button> </span>
                 <p class="card-text" ><b>Description</b>: ${issueDesc}</p>
                 <span><b>Address</b>: ${issueAddress} , ${issueCity}</span>
               </div>
@@ -43,6 +44,8 @@ async function getIssues() {
   }
 }
 
+//contributor add-----------------------------------------------
+function performContribute(d) {}
 // axios
 //   .get("http://localhost:3000/api/issue/get")
 

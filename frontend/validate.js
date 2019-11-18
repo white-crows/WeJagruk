@@ -26,6 +26,7 @@ async function validateUser() {
 function performLogOut() {
   console.log("logout-clicked");
   localStorage.removeItem("token");
+  localStorage.removeItem("user");
   window.location.href = "login.html?#";
 }
 //---------------------------------------------------------
