@@ -35,7 +35,7 @@ router.post("/register", async (req, res) => {
   });
   try {
     const ret = await temp.save();
-    res.send({ user: ret.id });
+    res.send("congratulations!! your account has been created. Please log-in");
   } catch (err) {
     res.status(400).send(err);
   }

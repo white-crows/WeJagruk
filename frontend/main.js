@@ -29,8 +29,10 @@ async function performSignUpRequest(e) {
       password: password
     });
     console.log(res);
+    alert(res.data);
+    document.location.reload();
   } catch (err) {
-    console.log(err);
+    alert(err);
   }
   e.preventDefault();
 }
