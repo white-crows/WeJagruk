@@ -1,7 +1,13 @@
+//user validation check----------------------------------
+validateUser();
+
+//user valid then show issues---------------------
+
 let c = [];
 console.log("yha aaya kya?");
 
 getIssues();
+
 async function getIssues() {
   const res = await axios.get("http://localhost:3000/api/issue/get");
   for (let i = 0; i < res.data.length; i++) {

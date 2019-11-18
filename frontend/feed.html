@@ -50,31 +50,10 @@
                 <a class="nav-link" href="addIssue.html"> Raise concern </a>
             </li>
             <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Profile
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">view profile</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" >Log-out</a>
-              </div>
+              <a class="nav-link" href="#"> Your concerns </a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link "
-                href="#team"
-                tabindex="-1"
-                aria-disabled="true"
-                >Your Concerns</a
-              >
+              <button type="button" class="btn btn-light" onclick="performLogOut()">Log-out</button>
             </li>
           </ul>
         </div>
@@ -119,7 +98,7 @@
 
     <!-- scripts -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="validate.js"></script>
     <script src="feed.js"></script>
-    
   </body>
 </html>

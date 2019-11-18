@@ -1,9 +1,9 @@
-async function clicked() {
+async function validateUser() {
   if (!localStorage.getItem("token")) {
     window.location.href = "login.html?#";
   } else {
     try {
-      console.log("clicked");
+      console.log("token exists");
       //token validation check----------------------------------
       const res = await axios.get("http://localhost:3000/api/posts", {
         headers: {
@@ -13,19 +13,17 @@ async function clicked() {
 
       //token not valid, perform logout-----------------
       if (res.data === "access-denied") {
-        logOut();
-      } else {
-        document.getElementById("response").innerHTML = res.data;
+        performLogOut();
       }
     } catch (err) {
       console.log(err);
-      logOut();
+      performLogOut();
     }
   }
 }
 
 //logout action-------------------------------------------
-function logOut() {
+function performLogOut() {
   console.log("logout-clicked");
   localStorage.removeItem("token");
   window.location.href = "login.html?#";
